@@ -1,21 +1,20 @@
 <div class= "banner", style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= asset_path 'background.jpg' %>);">
   <div class="banner-content">
-    <h1>Book unique bathroom and starting today, poop and pee never get easier</h1>\\
-      <%= simple_form_for(@bathroom) do |f| %>
-      <%= f.input :bathroom:id %>
-      <%= f.submit %>
-      <% end %>
+    <h1>Find Your Dream Bathroom</h1>
+    <h3>ANYWHERE, ANYTIME</h3>
   </div>
 </div>
 
+
 <div class="wrapper">
   <div class='row'>
-    <%= @bathrooms.each do |bathroom| %>
+    <h2>See What's Popular Now</h2>
+    <%= Bathroom.all.each do |bathroom| %>
     <div class = "col col-sx-12 col-sm-4">
-      <div class ="card" style = "background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= "https://kitt.lewagon.com/placeholder/cities/#{shanghai}" %>);">
+      <div class ="card" style = "background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= "" %>);">
         <div class="card-category">Popular</div>
         <div class="card-description">
-          <h2><%= Bathroom.name %></h2>
+          <h4><%= bathroom.name %></h2>
         </div>
         <a class="card-link" href="#" ></a>
       </div>
@@ -23,4 +22,3 @@
     <% end %>
   </div>
 </div>
-
