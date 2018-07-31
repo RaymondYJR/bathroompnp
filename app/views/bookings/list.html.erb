@@ -15,5 +15,13 @@
       <a href="#" class="tab"><strong>My listings</strong></a>
     </div>
   </div>
+  <ul class="bookings">
+    <% all_book = current_user.bookings  %>
+    <% all_book do |t| %>
+    <li>
+      <% owner = User.find(t.bathroom_id) %>
+      <%= owner.name %>
+    </li>
+  </ul>
 
 </div>
