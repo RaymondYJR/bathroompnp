@@ -12,7 +12,7 @@ class BathroomController < ApplicationController
   end
 
   def create
-    @bathroom = bathroom.new(bathroom_params)
+    @bathroom = Bathroom.new(bathroom_params)
     if @bathroom.save
       redirect_to bathroom_path(@bathroom)
     else
@@ -25,6 +25,7 @@ class BathroomController < ApplicationController
   end
 
   def update
+    @bathroom = Bathroom.find(params[:id])
     if @bathroom.update(bathroom_params)
       redirect_to bathroom_path(@bathroom)
     else
