@@ -10,7 +10,7 @@ class BookingsController < ApplicationController
     @bathroom = @booking.bathroom
     @user = @booking.user
     if @booking.save
-      redirect_to @bathroom
+      redirect_to booking_path(params[:booking_id])
     else
       render :new
     end
@@ -19,6 +19,7 @@ class BookingsController < ApplicationController
   def destroy
     @booking = Booking.find(params[:id])
     @booking.destroy
+    redirect_to user_path(params[:user_id])
   end
 
   private
