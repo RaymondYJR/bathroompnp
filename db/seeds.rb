@@ -13,7 +13,8 @@ require 'faker'
 
 10.times do
   User.create(
-    name: Faker::FamilyGuy.character
+    name: Faker::FamilyGuy.character,
+    email: Faker::Internet.email
   )
 end
 
