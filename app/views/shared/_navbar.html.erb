@@ -7,23 +7,41 @@
   <!-- Right Navigation -->
   <div class="navbar-wagon-right hidden-xs hidden-sm">
 
-        <a href="" class="navbar-wagon-item navbar-wagon-link">Host</a>
-        <a href="" class="navbar-wagon-item navbar-wagon-link">Visits</a>
-        <a href="" class="navbar-wagon-item navbar-wagon-link">Messages</a>
-        <div class="navbar-wagon-item">
-          <div class="dropdown">
-            <img src="https://kitt.lewagon.com/placeholder/users/ssaunier" class="avatar dropdown-toggle" id="navbar-wagon-menu" data-toggle="dropdown">
-            <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
+    <a href="" class="navbar-wagon-item navbar-wagon-link">Host</a>
+    <a href="" class="navbar-wagon-item navbar-wagon-link">Visits</a>
+    <a href="" class="navbar-wagon-item navbar-wagon-link">Messages</a>
+
+    <% if user_signed_in? %>
+    <!-- After signing up -->
+      <div class="navbar-wagon-item">
+        <div class="dropdown">
+          <img src="https://kitt.lewagon.com/placeholder/users/ssaunier" class="avatar dropdown-toggle" id="navbar-wagon-menu" data-toggle="dropdown">
+          <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
+            <%= link_to root_path do %>
               <li><a href="#">Profile</a></li>
-              <li><a href="#">Dashboard</a></li>
+            <% end %>
+            <%= link_to destroy_user_session_path do %>
               <li><a href="#">Sign Out</a></li>
-            </ul>
-          </div>
+            <% end %>
+          </ul>
         </div>
-
       </div>
-      <!-- Avatar with dropdown menu -->
+    <% else %>
+      <div class="navbar-wagon-item">
+        <%= link_to root_path do %>
+          <div class="btn btn-slim-grey">
+          SIGN IN
+          </div>
+        <% end %>
+        <%= link_to root_path do %>
+          <div class="btn btn-slim-grey">
+          SIGN UP
+          </div>
+        <% end %>
+      </div>
+    <% end %>
 
+  </div>
 
               <!--%= link_to destroy_user_session_path, method: :delete do %>
                 <i class="fa fa-sign-out"></i>  <!-%= t(".sign_out", default: "Log out") %>
