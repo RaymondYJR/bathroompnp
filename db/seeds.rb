@@ -12,9 +12,12 @@ Booking.delete_all
 require 'faker'
 
 10.times do
+  password = Faker::Coffee.blend_name
   User.create(
     name: Faker::FamilyGuy.character,
-    email: Faker::Internet.email
+    email: Faker::Internet.email,
+    password: password,
+    password_confirmation: password
   )
 end
 
@@ -28,7 +31,7 @@ User.all.each do |user|
     price_per_use: [10..500].sample,
     name: Faker::Superhero.name,
     size: [30..100].sample.to_s,
-    description: Faker::Lorem.paragraph,
+    description: Faker::Lorem.paragraph
   )
 end
 
