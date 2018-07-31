@@ -5,3 +5,43 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+Bathroom.delete_all
+User.delete_all
+Booking.delete_all
+
+require 'faker'
+
+10.times do
+  User.create(
+    name: Faker::FamilyGuy.character
+  )
+end
+
+puts "Created #{User.count} users!"
+
+User.all.each do |user|
+  Bathroom.create(
+    user: user,
+    shower_condition: Faker::Boolean.boolean,
+    address: Faker::Address.full_address,
+    price_per_use: [10..500].sample,
+    name: Faker::Superhero.name,
+    size: [30..100].sample.to_s,
+    description: Faker::Lorem.paragraph,
+  )
+end
+
+puts "Created #{Bathroom.count} bathrooms!"
+
+5.times do
+  Booking.create(
+    user: User.all.sample,
+    bathroom: Bathroom.all.sample,
+    start_time: Faker::Time.between(DateTime.now - 1, DateTime.now),
+    end_time: Faker::Time.forward(1, :all)
+  )
+end
+
+puts "Created #{Booking.count} bookings!"
+
+
