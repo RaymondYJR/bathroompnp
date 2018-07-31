@@ -2,11 +2,13 @@ class BookingsController < ApplicationController
   def new
     @booking = Booking.new
     @bathroom = Bathroom.find(params[:bathroom_id])
+    @user = User.find(params[:user_id])
   end
 
   def create
     @booking = Booking.new(booking_params)
     @bathroom = @booking.bathroom
+    @user = @booking.user
     if @booking.save
       redirect_to @bathroom
     else
