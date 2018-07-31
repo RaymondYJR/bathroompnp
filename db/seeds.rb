@@ -33,13 +33,14 @@ end
 
 puts "Created #{Bathroom.count} bathrooms!"
 
-Booking.create(
-  user: User.first,
-  bathroom: Bathroom.last,
-  start_time: Faker::Time.between(DateTime.now - 1, DateTime.now),
-  end_time: Faker::Time.forward(1, :all)
-)
-
+5.times do
+  Booking.create(
+    user: User.all.sample,
+    bathroom: Bathroom.all.sample,
+    start_time: Faker::Time.between(DateTime.now - 1, DateTime.now),
+    end_time: Faker::Time.forward(1, :all)
+  )
+end
 
 puts "Created #{Booking.count} bookings!"
 
