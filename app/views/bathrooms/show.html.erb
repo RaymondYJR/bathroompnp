@@ -1,5 +1,23 @@
-<%= link_to "make booking", new_bathroom_booking_path(@bathroom) %>
-<%= @bathroom.name %>
-<%= cl_image_tag @bathroom.photo1, height: 300, width: 400, crop: :fill %>
-<%= cl_image_tag @bathroom.photo2, height: 300, width: 400, crop: :fill %>
-<%= cl_image_tag @bathroom.photo3, height: 300, width: 400, crop: :fill %>
+
+<div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('http://remontidei.ru/wp-content/uploads/2016/02/%D0%BE%D1%82%D0%B4%D0%B5%D0%BB%D0%BA%D0%B0-%D0%BC%D0%B0%D0%BB%D0%B5%D0%BD%D1%8C%D0%BA%D0%BE%D0%B9-%D0%B2%D0%B0%D0%BD%D0%BD%D0%BE%D0%B9-%D0%BA%D0%BE%D0%BC%D0%BD%D0%B0%D1%82%D1%8B-%D0%BF%D0%BB%D0%B8%D1%82%D0%BA%D0%BE%D0%B9-%D1%84%D0%BE%D1%82%D0%BE-%D0%B4%D0%B8%D0%B7%D0%B0%D0%B9%D0%BD.jpg');">
+
+  <h1><%= @bathroom.name %></h1>
+  <p>$<%= @bathroom.price_per_use %></p>
+</div>
+
+  <h3>Size</h3>
+  <p><%= @bathroom.size %> square meters</p>
+  <h3>Has shower?</h3>
+  <% if @bathroom.shower_condition == true %>
+    <p>Has shower, enjoy!</p>
+  <% else %>
+    <p>Sorry, no shower.</p>
+  <% end %>
+  <h3>Description</h3>
+  <p><%= @bathroom.description %></p>
+
+
+<div class="btn-medium">
+  <%= link_to "make a booking", new_bathroom_booking_path(@bathroom) %>
+</div>
+
