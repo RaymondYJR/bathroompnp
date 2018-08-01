@@ -1,5 +1,10 @@
 
-<div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('http://remontidei.ru/wp-content/uploads/2016/02/%D0%BE%D1%82%D0%B4%D0%B5%D0%BB%D0%BA%D0%B0-%D0%BC%D0%B0%D0%BB%D0%B5%D0%BD%D1%8C%D0%BA%D0%BE%D0%B9-%D0%B2%D0%B0%D0%BD%D0%BD%D0%BE%D0%B9-%D0%BA%D0%BE%D0%BC%D0%BD%D0%B0%D1%82%D1%8B-%D0%BF%D0%BB%D0%B8%D1%82%D0%BA%D0%BE%D0%B9-%D1%84%D0%BE%D1%82%D0%BE-%D0%B4%D0%B8%D0%B7%D0%B0%D0%B9%D0%BD.jpg');">
+<% if @bathroom.photo1? %>
+  <div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('<%= cl_image_path @bathroom.photo1, crop: :fill %>');">
+<% else %>
+  <div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('https://st.hzcdn.com/simgs/cf3111130426c707_4-1308/traditional-bathroom.jpg');">
+<% end %>
+
 
   <h1><%= @bathroom.name %></h1>
   <p>$<%= @bathroom.price_per_use %></p>
@@ -21,3 +26,14 @@
   <%= link_to "make a booking", new_bathroom_booking_path(@bathroom) %>
 </div>
 
+<div>
+  <% if current_user.id == @bathroom.user_id %>
+    <div class = "btn-medium">
+      <%= link_to "Edit the Bathroom Details", edit_bathroom_path %>
+    </div>
+    <div class = "btn-medium">
+      <%= link_to "Delete the listing", bathroom_path(@bathroom.id), method: :delete,  data: { confirm: "Are you sure?" }  %>
+    </div>
+  <% else %>
+  <% end %>
+</div>
