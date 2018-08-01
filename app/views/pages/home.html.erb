@@ -11,8 +11,12 @@
     <h2>See What's Popular Now</h2>
     <% Bathroom.all.each do |bathroom| %>
       <div class = "col col-sx-12 col-sm-4">
-        <div class ="card" style = "background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= "" %>);">
-          <div class="card-category">Popular</div>
+        <% if bathroom.photo1? %>
+          <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path bathroom.photo1, crop: :fill %>');">
+        <% else %>
+          <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://st.hzcdn.com/simgs/cf3111130426c707_4-1308/traditional-bathroom.jpg');">
+        <% end %>
+        <div class="card-category">Popular</div>
           <div class="card-description">
             <h4><%= bathroom.name %></h2>
           </div>
