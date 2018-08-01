@@ -7,9 +7,11 @@
   <!-- Right Navigation -->
   <div class="navbar-wagon-right hidden-xs hidden-sm">
 
-    <a href="" class="navbar-wagon-item navbar-wagon-link">Browse</a>
-    <a href="" class="navbar-wagon-item navbar-wagon-link">Team</a>
-    <a href="" class="navbar-wagon-item navbar-wagon-link">Contact</a>
+  <%= link_to bathrooms_path do %>
+    <p class="navbar-wagon-item navbar-wagon-link">Browse</p>
+  <% end %>
+    <p class="navbar-wagon-item navbar-wagon-link">Team</p>
+    <p class="navbar-wagon-item navbar-wagon-link">Contact</p>
 
     <% if user_signed_in? %>
     <!-- After signing up -->
