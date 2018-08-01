@@ -28,9 +28,9 @@ User.all.each do |user|
     user: user,
     shower_condition: Faker::Boolean.boolean,
     address: Faker::Address.full_address,
-    price_per_use: [10..500].sample,
+    price_per_use: (10..500).to_a.sample,
     name: Faker::Superhero.name,
-    size: [30..100].sample.to_s,
+    size: (30..100).to_a.sample.to_s,
     description: Faker::Lorem.paragraph
   )
 end
