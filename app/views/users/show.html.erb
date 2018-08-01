@@ -4,20 +4,28 @@
   <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2));">
     <div class="card-category">My booking</div>
     <div class="card-description">
-      <p><%=  %></p>
-      <p><%=  %></p>
-      <p><%=  %></p>
+      <p><%= @user.bookings.last.start_time %></p>
+      <p><%= @user.bookings.last.end_time %></p>
+      <p><%= @user.bookings.last.bathroom.name %></p>
+      <p><%= @user.bookings.last.bathroom.address %></p>
     </div>
   </div>
 </div>
 
-<div class="col-xs-12 col-sm-4">
-  <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2));">
-    <div class="card-category">My bathroom</div>
-    <div class="card-description">
-      <p><%=  %></p>
-      <p><%=  %></p>
-      <p><%=  %></p>
+<% @user.bathrooms.each do |bathroom| %>
+  <%= link_to bathroom_path(bathroom) do %>
+    <div class="col-xs-12 col-sm-4">
+      <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2));">
+        <div class="card-category">My bathroom</div>
+        <div class="card-description">
+          <p><%= bathroom.name %></p>
+          <p><%= bathroom.address %></p>
+          <p><%= bathroom.size %> squre meters</p>
+          <p><%= bathroom.shower_condition %></p>
+          <p>$<%= bathroom.price_per_use %></p>
+          <p><%= bathroom.description %></p>
+        </div>
+      </div>
     </div>
-  </div>
-</div>
+  <% end %>
+<% end %>
