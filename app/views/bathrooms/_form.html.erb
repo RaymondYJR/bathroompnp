@@ -1,13 +1,13 @@
-<%= simple_form_for (@bathrooms) do |bath| %>
+<%= simple_form_for (@bathroom) do |bath| %>
   <%= bath.error_notification %>
   <%= bath.error_notification message: bath.object.errors[:base].to_sentence if bath.object.errors[:base].present? %>
   <div class="form-inputs">
-    <%= bath.input :name %>
+    <%= bath.input :size %>
     <%= bath.input :address %>
     <%= bath.input :description %>
     <%= bath.input :price_per_use%>
-    <%= bath.collection_radio_buttons :shower_condition, [[true, 'Yes'], [false, 'No']] %>
-    <%= bath.association :user %>
+    <%= bath.label :shower %>
+    <%= bath.collection_radio_buttons :shower_condition, [[true, 'Yes'], [false, 'No']], :first, :last  %>
   </div>
   <div class=“form-actions”>
     <%= bath.submit "add a new bathroom", class: "btn btn-primary" %>

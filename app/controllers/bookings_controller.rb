@@ -9,17 +9,17 @@ class BookingsController < ApplicationController
   end
 
   def new
-    @booking = Booking.new
     @bathroom = Bathroom.find(params[:bathroom_id])
-    @user = User.find(params[:user_id])
+    @booking = Booking.new
   end
 
   def create
+    @bathroom = Bathroom.find(params[:bathroom_id])
     @booking = Booking.new(booking_params)
-    @bathroom = @booking.bathroom
-    @user = @booking.user
+    @booking.bathroom_id = @bathroom.id
+    @booking.user_id = current_user.id
     if @booking.save
-      redirect_to booking_path(params[:booking_id])
+      redirect_to bathroom_booking_path(params[:bathroom_id], @booking)
     else
       render :new
     end

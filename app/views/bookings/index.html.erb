@@ -16,12 +16,16 @@
     </div>
   </div>
   <ul class="bookings">
-    <% all_book = current_user.bookings  %>
-    <% all_book do |t| %>
+    <% @bookings.each do |t| %>
     <li>
-      <% owner = User.find(t.bathroom_id) %>
+      <% owner = User.find(t.user_id) %>
       <%= owner.name %>
+      <% bathroom = Bathroom.find(t.bathroom_id) %>
+      <%= bathroom.address %>
+      <%= t.start_time %>
+      <%= t.end_time %>
     </li>
+    <% end %>
   </ul>
 
 </div>
