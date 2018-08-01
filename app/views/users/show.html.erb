@@ -1,17 +1,25 @@
 <%= link_to "new bathroom", new_bathroom_path  %>
 
-<div class="col-xs-12 col-sm-4">
-  <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2));">
-    <div class="card-category">My booking</div>
-    <div class="card-description">
-      <p><%= @user.bookings.last.start_time %></p>
-      <p><%= @user.bookings.last.end_time %></p>
-      <p><%= @user.bookings.last.bathroom.name %></p>
-      <p><%= @user.bookings.last.bathroom.address %></p>
+<h2>My Bookings</h2>
+<% @user.bookings.each do |booking| %>
+  <%= link_to bathroom_booking_path(booking.id) do %>
+    <div class="col-xs-12 col-sm-4">
+      <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2));">
+        <div class="card-category">My booking</div>
+        <div class="card-description">
+          <p><%= booking.start_time %></p>
+          <p><%= booking.end_time %></p>
+          <p><%= booking.bathroom.name %></p>
+          <p><%= booking.bathroom.address %></p>
+        </div>
+      </div>
     </div>
-  </div>
-</div>
+  <% end %>
+<% end %>
 
+<br>
+
+<h2>My Bathrooms</h2>
 <% @user.bathrooms.each do |bathroom| %>
   <%= link_to bathroom_path(bathroom) do %>
     <div class="col-xs-12 col-sm-4">
