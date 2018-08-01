@@ -5,7 +5,7 @@ class BookingsController < ApplicationController
   end
 
   def show
-    @booking = Booking.find(params[:bathroom_id])
+    @booking = Booking.find(params[:id])
   end
 
   def new
@@ -19,7 +19,7 @@ class BookingsController < ApplicationController
     @booking.bathroom_id = @bathroom.id
     @booking.user_id = current_user.id
     if @booking.save
-      redirect_to bathroom_booking_path(params[:bathroom_id], @booking)
+      redirect_to bathroom_bookings_path(params[:bathroom_id], @booking)
     else
       render :new
     end
