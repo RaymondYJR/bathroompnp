@@ -1,1 +1,17 @@
-
+<% @bathrooms.each do |bathroom| %>
+  <%= link_to bathroom_path(bathroom) do %>
+    <div class="col-xs-12 col-sm-4">
+      <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://st.hzcdn.com/simgs/cf3111130426c707_4-1308/traditional-bathroom.jpg');">
+        <div class="card-category"><%= bathroom.name %></div>
+        <div class="card-description">
+          <p><%= bathroom.address %></p>
+          <p>$<%= bathroom.price_per_use %></p>
+          <p><%= bathroom.user.name %>'s favourite bathroom</p>
+        </div>
+        <%= link_to user_path(bathroom.user) do %>
+          <img class="card-user" src="https://kitt.lewagon.com/placeholder/users/tgenaitay">
+        <% end %>
+      </div>
+    </div>
+  <% end %>
+<% end %>
