@@ -17,7 +17,7 @@
         <div class="dropdown">
           <img src="https://kitt.lewagon.com/placeholder/users/ssaunier" class="avatar dropdown-toggle" id="navbar-wagon-menu" data-toggle="dropdown">
           <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
-            <%= link_to user_bathrooms_path(current_user.id) do %>
+            <%= link_to user_path(current_user.id) do %>
               <li>Profile</li>
             <% end %>
             <%= link_to destroy_user_session_path do %>

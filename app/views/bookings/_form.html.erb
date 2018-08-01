@@ -1,11 +1,9 @@
-<%= simple_form_for (@bookings) do |book| %>
+<%= simple_form_for ([@bathroom, @booking]) do |book| %>
   <%= book.error_notification %>
   <%= book.error_notification message: book.object.errors[:base].to_sentence if book.object.errors[:base].present? %>
   <div class="form-inputs">
-    <%= book.datetime select :start_time %>
-    <%= book.datetime select :end_time %>
-    <%= book.association :bathroom %>
-    <%= book.association :user %>
+    <%= book.input :start_time %>
+    <%= book.input :end_time %>
   </div>
   <div class=“form-actions”>
     <%= book.submit "Book Now!", class: "btn btn-primary" %>

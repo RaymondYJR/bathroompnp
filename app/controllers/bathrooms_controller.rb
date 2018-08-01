@@ -9,10 +9,12 @@ class BathroomsController < ApplicationController
 
   def new
     @bathroom = Bathroom.new
+
   end
 
   def create
     @bathroom = Bathroom.new(bathroom_params)
+    @bathroom.user_id = current_user.id
     if @bathroom.save
       redirect_to bathroom_path(@bathroom)
     else
