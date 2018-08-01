@@ -1,1 +1,10 @@
-<%= link_to "show all bookings for this bathroom", bathroom_bookings_path %>
+<h1>The Booking</h1>
+<h2>Start time</h2>
+<p><%= @booking.start_time %></p>
+<h2>End time</h2>
+<p><%= @booking.end_time %></p>
+<h2>Bathroom name</h2>
+<p><%= @booking.bathroom.name %></p>
+<h2>Address</h2>
+<p><%= @booking.bathroom.address %></p>
+

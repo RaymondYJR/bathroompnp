@@ -256,7 +256,9 @@ DEPENDENCIES
   bootstrap-sass (~> 3.3)
   carrierwave (~> 1.2)
   cloudinary
+
   datetimepicker-rails!
+
   devise
   dotenv-rails
   faker

@@ -1,3 +1,42 @@
 <%= link_to "new bathroom", new_bathroom_path  %>
 
-<%= link_to "edit account", edit_user_registration_path %>
+
+
+<h2>My Bookings</h2>
+<% @user.bookings.each do |booking| %>
+  <%= link_to bathroom_booking_path(booking.id) do %>
+    <div class="col-xs-12 col-sm-4">
+      <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2));">
+        <div class="card-category">My booking</div>
+        <div class="card-description">
+          <p><%= booking.start_time %></p>
+          <p><%= booking.end_time %></p>
+          <p><%= booking.bathroom.name %></p>
+          <p><%= booking.bathroom.address %></p>
+        </div>
+      </div>
+    </div>
+  <% end %>
+<% end %>
+
+<br>
+
+<h2>My Bathrooms</h2>
+<% @user.bathrooms.each do |bathroom| %>
+  <%= link_to bathroom_path(bathroom) do %>
+    <div class="col-xs-12 col-sm-4">
+      <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2));">
+        <div class="card-category">My bathroom</div>
+        <div class="card-description">
+          <p><%= bathroom.name %></p>
+          <p><%= bathroom.address %></p>
+          <p><%= bathroom.size %> squre meters</p>
+          <p><%= bathroom.shower_condition %></p>
+          <p>$<%= bathroom.price_per_use %></p>
+          <p><%= bathroom.description %></p>
+        </div>
+      </div>
+    </div>
+  <% end %>
+<% end %>
+
