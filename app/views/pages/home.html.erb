@@ -10,7 +10,7 @@
   <div class='row'>
     <h2>See What's Popular Now</h2>
     <% Bathroom.all.each do |bathroom| %>
-      <div class = "col col-sx-12 col-sm-4">
+      <div class = "col-sx-12 col-sm-4">
         <%= link_to bathroom_path(bathroom) do %>
           <% if bathroom.photo1? %>
             <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path bathroom.photo1, crop: :fill %>');">
@@ -20,6 +20,7 @@
           <div class="card-category">Popular</div>
           <div class="card-description">
             <h4><%= bathroom.name %></h2>
+          </div>
           </div>
         <% end %>
       </div>
