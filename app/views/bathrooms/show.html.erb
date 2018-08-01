@@ -1,2 +1,5 @@
 <%= link_to "make booking", new_bathroom_booking_path(@bathroom) %>
-<%= Bathroom.last.bookings.ids %>
+<%= @bathroom.name %>
+<%= cl_image_tag @bathroom.photo1, height: 300, width: 400, crop: :fill %>
+<%= cl_image_tag @bathroom.photo2, height: 300, width: 400, crop: :fill %>
+<%= cl_image_tag @bathroom.photo3, height: 300, width: 400, crop: :fill %>
