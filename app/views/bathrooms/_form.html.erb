@@ -14,6 +14,12 @@
               <%= bath.input :price_per_use%>
               <%= bath.label :shower %>
               <%= bath.collection_radio_buttons :shower_condition, [[true, 'Yes'], [false, 'No']], :first, :last  %>
+              <%= bath.input :photo1 %>
+              <%= bath.input :photo1_cache, as: :hidden %>
+              <%= bath.input :photo2 %>
+              <%= bath.input :photo2_cache, as: :hidden %>
+              <%= bath.input :photo3 %>
+              <%= bath.input :photo3_cache, as: :hidden %>
             </div>
             <div class=“form-actions”>
               <%= bath.submit "add a new bathroom", class: "btn btn-primary" %>
