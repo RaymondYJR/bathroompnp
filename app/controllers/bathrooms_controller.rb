@@ -1,10 +1,20 @@
 class BathroomsController < ApplicationController
   def index
-    @bathrooms = Bathroom.all
+    @bathrooms = Bathroom.where.not(latitude: nil, longitude: nil)
+    @markers = @bathrooms.map do |bathroom|
+      {
+        lat: bathroom.latitude,
+        lng: bathroom.longitude,
+      }
+    end
   end
 
   def show
     @bathroom = Bathroom.find(params[:id])
+    @markers = [{
+        lat: @bathroom.latitude,
+        lng: @bathroom.longitude,
+      }]
   end
 
   def new

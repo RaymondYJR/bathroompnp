@@ -22,6 +22,7 @@ gem 'uglifier'
 gem 'webpacker'
 gem 'faker'
 gem 'pg_search'
+gem "geocoder"
 
 gem 'datetimepicker-rails', github: 'zpaulovics/datetimepicker-rails', branch: 'master', submodules: true
 gem 'momentjs-rails', '~> 2.9',  :github => 'derekprior/momentjs-rails'
@@ -37,5 +38,5 @@ group :development, :test do
   gem 'listen', '~> 3.0.5'
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
-  gem 'dotenv-rails'
+  gem 'dotenv-rails', groups: [:development, :test]
 end
