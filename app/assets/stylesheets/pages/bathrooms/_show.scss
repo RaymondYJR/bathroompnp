@@ -3,4 +3,18 @@
 }
 .main-container {
   display: flex;
+  justify-content: space-between;
+}
+.info-container {
+  position: relative;
+}
+.info {
+  position: absolute;
+  align-items: center
+}
+.show-map {
+  flex: 0 0 570px;
+  height: 600px;
+  position: sticky !important;
+  top: 0 !important;
 }
