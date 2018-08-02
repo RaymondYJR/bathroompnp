@@ -1,14 +1,14 @@
 .btn-medium {
-  color: #3587A4;
-  border: 1px solid #3587A4;
+  background-color: #000000;
+  border: 1px solid #000000;
   padding: 5px 15px;
   border-radius: 50px;
-  opacity: 0.6;
-  font-weight: bolder;
+  opacity: 0.7;
   font-size: 20px;
+  color: white;
 }
 .btn-medium:hover {
   opacity: 1;
   text-decoration: none;
-  color: #999999;
+  color: #BA1F33;
 }
