@@ -3,12 +3,12 @@
   background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('images/background.jpg');
   color: white;
   text-align: center;
-  height: 100vh;
+  height: 70vh;
   display: flex;
   background-size: cover;
   justify-content: center;
   align-items: center;
-  margin: auto;
+  margin-bottom: 5px;
 }
 
 h1 {
@@ -41,3 +41,12 @@ h3 {
   padding: 5px, 10px;
   margin: 5px, 10px;
 }
+
+
+.container {
+  padding: 90px;
+  width: 750px;
+  display:flex;
+  justify-content: space-between;
+}
+
