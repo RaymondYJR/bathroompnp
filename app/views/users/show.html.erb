@@ -4,7 +4,7 @@
 
 <h2>My Bookings</h2>
 <% @user.bookings.each do |booking| %>
-  <%= link_to bathroom_booking_path(booking.id) do %>
+  <%= link_to booking_path(booking.id) do %>
     <div class="col-xs-12 col-sm-4">
       <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2));">
         <div class="card-category">My booking</div>
