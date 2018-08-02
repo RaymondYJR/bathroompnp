@@ -3,41 +3,59 @@
 <% else %>
   <div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('https://st.hzcdn.com/simgs/cf3111130426c707_4-1308/traditional-bathroom.jpg');">
 <% end %>
-  <h1><%= @bathroom.name %></h1>
-  <p>$<%= @bathroom.price_per_use %></p>
+  <div>
+    <div><h1><%= @bathroom.name %></h1></div>
+    <div><h3>$<%= @bathroom.price_per_use %></h3></div>
+  </div>
 </div>
 
 <div class="main-container">
   <div class="info-container">
     <div class="info">
-      <h3>Address</h3>
-      <p><%= @bathroom.address %></p>
-      <h3>Size</h3>
-      <p><%= @bathroom.size %> square meters</p>
-      <h3>Has shower?</h3>
-      <% if @bathroom.shower_condition == true %>
-        <p>Has shower, enjoy!</p>
-      <% else %>
-        <p>Sorry, no shower.</p>
-      <% end %>
-      <h3>Description</h3>
-      <p><%= @bathroom.description %></p>
-
-      <div class="btn-medium">
-        <%= link_to "make a booking", new_bathroom_booking_path(@bathroom) %>
-      </div>
-
       <div>
-        <% if current_user.id == @bathroom.user_id %>
-          <div class = "btn-medium">
-            <%= link_to "Edit the Bathroom", edit_bathroom_path %>
-          </div>
-          <div class = "btn-medium">
-            <%= link_to "Delete the listing", bathroom_path(@bathroom.id), method: :delete,  data: { confirm: "Are you sure?" }  %>
+        <h3>Address</h3>
+        <div class="description">
+          <p><%= @bathroom.address %></p>
+        </div>
+      </div>
+      <div>
+        <h3>Size</h3>
+        <div class="description">
+          <p><%= @bathroom.size %> square meters</p>
+        </div>
+      </div>
+      <div>
+        <h3>Has shower?</h3>
+        <% if @bathroom.shower_condition == true %>
+          <div class="description">
+            <p>Has shower, enjoy!</p>
           </div>
         <% else %>
+          <div class="description">
+            <p>Sorry, no shower.</p>
+          </div>
         <% end %>
       </div>
+      <div>
+        <h3>Description</h3>
+        <div class="description">
+          <p><%= @bathroom.description %></p>
+        </div>
+      </div>
+    </div>
+    <div class="buttons">
+      <% if current_user.id == @bathroom.user_id %>
+        <div class = "btn-medium">
+          <%= link_to "Edit the Bathroom", edit_bathroom_path %>
+        </div>
+        <div class = "btn-medium">
+          <%= link_to "Delete this Bathroom", bathroom_path(@bathroom.id), method: :delete,  data: { confirm: "Are you sure?" }  %>
+        </div>
+      <% else %>
+        <div class="btn-medium">
+          <%= link_to "Make a Booking", new_bathroom_booking_path(@bathroom) %>
+        </div>
+      <% end %>
     </div>
   </div>
 

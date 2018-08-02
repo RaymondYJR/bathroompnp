@@ -7,14 +7,26 @@
 }
 .info-container {
   position: relative;
+  width: 70%;
 }
 .info {
-  position: absolute;
-  align-items: center
+  align-items: center;
+
 }
 .show-map {
   flex: 0 0 570px;
   height: 600px;
   position: sticky !important;
   top: 0 !important;
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 40px;
+}
+
+.description {
+  align-items: center;
+  text-align: center;
 }
