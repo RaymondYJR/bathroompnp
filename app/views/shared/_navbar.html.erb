@@ -30,12 +30,17 @@
             <img src="https://kitt.lewagon.com/placeholder/users/ssaunier" class="avatar dropdown-toggle" id="navbar-wagon-menu" data-toggle="dropdown">
           <% end %>
           <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
-            <%= link_to user_path(current_user.id) do %>
-              <li>Profile</li>
-            <% end %>
-            <%= link_to destroy_user_session_path, method: :delete do %>
-              <li>Sign Out</li>
-            <% end %>
+            <div class="link-box">
+              <%= link_to user_path(current_user.id) do %>
+                <li>Profile</li>
+              <% end %>
+            </div>
+            <div class="link-box">
+              <%= link_to destroy_user_session_path, method: :delete do %>
+                <li>Sign Out</li>
+              <% end %>
+            </div>
+
           </ul>
         </div>
       </div>
