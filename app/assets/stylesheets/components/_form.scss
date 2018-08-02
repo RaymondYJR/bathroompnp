@@ -23,6 +23,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-top: 100px;
 }
 
 .form-control-label {
@@ -49,5 +50,19 @@ h2 {
   margin-bottom: 10px;
 }
 
+.back-btn {
+  font-size: 30px;
+  text-align: left;
+  margin-top: 20px;
+  margin-left: 20px;
+}
+
+a {
+  color: #C8BC51;
+}
+
+a:hover{
+  color: rgb(245, 245, 245)
+}
 
 

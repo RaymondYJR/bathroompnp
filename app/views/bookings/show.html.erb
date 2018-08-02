@@ -1,14 +1,36 @@
-<h1>The Booking</h1>
-<h2>Start time</h2>
-<p><%= @booking.start_time %></p>
+<div>
+  <% cur_bath = Bathroom.find(@booking.bathroom_id) %>
+  <% if Bathroom.find(@booking.bathroom_id).user_id == current_user.id %>
+    <% booker = current_user.name %>
+    <h3><%= "Your bathroom has been booked by #{booker}" %></h3>
+    <% else %>
+    <% bathroom_owner_id = Bathroom.find(@booking.bathroom_id).user_id %>
+    <% owner = User.find(bathroom_owner_id).name  %>
+    <h3><%= "Your booking with #{owner} has been confirmed!" %></h3>
+  <% end %>
+  <ul>
+    <li> Check in: <% custom_time = @booking.start_time %><%= custom_time.strftime("%H:%M, %F ")%> </li>
+    <li> Check out: <% out_time = @booking.end_time %> <%= custom_time.strftime("%H:%M, %F") %></li>
+    <li><%= cur_bath.address %></li>
+  </ul>
+</div>
+<div class="containban">
+<% if cur_bath.photo1? %>
+  <div class="banner banner-fixed" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('<%= cl_image_path cur_bath.photo1, crop: :fill %>');">
+<% else %>
+  <div class="banner banner-fixed" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('https://st.hzcdn.com/simgs/cf3111130426c707_4-1308/traditional-bathroom.jpg');">
+<% end %>
+</div>
+
+
+
+
+
+<!-- <p><%= @booking.start_time %></p>
 <h2>End time</h2>
 <p><%= @booking.end_time %></p>
 <h2>Bathroom name</h2>
 <p><%= @booking.id %></p>
 <h2>Address</h2>
-<p><%= @booking.bathroom.address %></p>
-
-
-bathroom = <%= @booking.bathroom_id %>
-booking = <%= @booking.id %>
+<p><%= @booking.bathroom.address %></p> -->
 
