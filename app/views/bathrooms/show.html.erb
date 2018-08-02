@@ -22,23 +22,25 @@
       <% end %>
       <h3>Description</h3>
       <p><%= @bathroom.description %></p>
-    </div>
-    <div class="btn-medium">
-      <%= link_to "make a booking", new_bathroom_booking_path(@bathroom) %>
-    </div>
-    <div>
-      <% if current_user.id == @bathroom.user_id %>
-        <div class = "btn-medium">
-          <%= link_to "Edit the Bathroom Details", edit_bathroom_path %>
-        </div>
-        <div class = "btn-medium">
-          <%= link_to "Delete the listing", bathroom_path(@bathroom.id), method: :delete,  data: { confirm: "Are you sure?" }  %>
-        </div>
-      <% else %>
-      <% end %>
+
+      <div class="btn-medium">
+        <%= link_to "make a booking", new_bathroom_booking_path(@bathroom) %>
+      </div>
+
+      <div>
+        <% if current_user.id == @bathroom.user_id %>
+          <div class = "btn-medium">
+            <%= link_to "Edit the Bathroom", edit_bathroom_path %>
+          </div>
+          <div class = "btn-medium">
+            <%= link_to "Delete the listing", bathroom_path(@bathroom.id), method: :delete,  data: { confirm: "Are you sure?" }  %>
+          </div>
+        <% else %>
+        <% end %>
+      </div>
     </div>
   </div>
 
-  <div id="map"
+  <div class="show-map" id="map"
     data-markers="<%= @markers.to_json %>"></div>
 </div>
