@@ -1,29 +1,37 @@
-<% @bathrooms.each do |bathroom| %>
-  <%= link_to bathroom_path(bathroom) do %>
-    <div class="col-xs-12 col-sm-4">
-      <% if bathroom.photo1? %>
-        <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path bathroom.photo1, crop: :fill %>');">
-      <% else %>
-        <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://st.hzcdn.com/simgs/cf3111130426c707_4-1308/traditional-bathroom.jpg');">
-      <% end %>
+<div class="main-container">
+  <div class="cards-container">
+    <% @bathrooms.each do |bathroom| %>
+      <%= link_to bathroom_path(bathroom) do %>
+        <div class="col-xs-12 col-sm-6">
+          <% if bathroom.photo1? %>
+            <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path bathroom.photo1, crop: :fill %>');">
+          <% else %>
+            <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://st.hzcdn.com/simgs/cf3111130426c707_4-1308/traditional-bathroom.jpg');">
+          <% end %>
 
-        <div class="card-category"><%= bathroom.name %></div>
-        <div class="card-description">
-          <p><%= bathroom.address %></p>
-          <p>$<%= bathroom.price_per_use %></p>
-          <p><%= bathroom.user.name %>'s favourite bathroom</p>
+            <div class="card-category"><%= bathroom.name %></div>
+            <div class="card-description">
+              <p><%= bathroom.address %></p>
+              <p>$<%= bathroom.price_per_use %></p>
+              <p><%= bathroom.user.name %>'s favourite bathroom</p>
+            </div>
+            <%= link_to user_path(bathroom.user) do %>
+              <% if bathroom.user.photo? %>
+                <%= cl_image_tag bathroom.user.photo, class: "card-user", height: 40, width: 40 %>
+              <% else %>
+                <img class="card-user" src="https://kitt.lewagon.com/placeholder/users/tgenaitay">
+              <% end %>
+            <% end %>
+          </div>
         </div>
-        <%= link_to user_path(bathroom.user) do %>
-          <img class="card-user" src="https://kitt.lewagon.com/placeholder/users/tgenaitay">
-        <% end %>
-      </div>
-    </div>
-  <% end %>
-<% end %>
+      <% end %>
+    <% end %>
+  </div>
 
-<div
-  id="map"
-  style="width: 100%;
-  height: 600px;"
-  data-markers="<%= @markers.to_json %>"
-></div>
+  <div
+    id="map"
+    style="width: 100%;"
+    data-markers="<%= @markers.to_json %>"
+  ></div>
+
+</div>
