@@ -1,4 +1,4 @@
- class BathroomsController < ApplicationController
+class BathroomsController < ApplicationController
   def index
     @bathrooms = Bathroom.all
   end
