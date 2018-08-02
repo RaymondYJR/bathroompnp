@@ -10,9 +10,14 @@
   justify-content: space-between;
 }
 
+.nav-link {
+  margin-top: 15px;
+}
+
 /* Logo */
 .navbar-wagon-brand img {
-  height: 50px;
+  width: 200px;
+  height: 120px;
 }
 
 /* User Avatar */
@@ -35,11 +40,20 @@
   padding: 0 20px;
 }
 
+.navbar-wagon-item a {
+  align-items: center;
+
+}
+
 /* Navbar link */
-.navbar-wagon-link {
+.navbar-wagon-item.navbar-wagon-link{
   color: #616668;
   font-size: 14px;
+  text-decoration: none;
+  text-align: center;
+  align-items: center;
 }
+
 .navbar-wagon-link:hover {
   color: #da552f;
   text-decoration: none;
@@ -74,4 +88,8 @@
   transform: rotate(45deg);
   border-left: 1px solid #E6E6E6;
   border-top: 1px solid #E6E6E6;
+}
+
+.btn.btn-slim-grey {
+  text-align: top;
 }

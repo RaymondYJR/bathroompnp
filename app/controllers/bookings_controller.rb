@@ -19,7 +19,7 @@ class BookingsController < ApplicationController
     @booking.bathroom_id = @bathroom.id
     @booking.user_id = current_user.id
     if @booking.save
-      redirect_to bathroom_bookings_path(params[:bathroom_id], @booking)
+      redirect_to booking_path(@booking)
     else
       render :new
     end

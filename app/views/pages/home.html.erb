@@ -2,13 +2,18 @@
   <div class="banner-content">
     <h1>Find Your Dream Bathroom</h1>
     <h3>ANYWHERE, ANYTIME</h3>
+    <div class="container">
+      <a href="/" class="btn-medium">Host Your Bathroom</a>
+      <!--%= link_to "Book a Bathroom", bathroom_booking %-->
+      <a href="/" class="btn-medium">Book a Bathroom</a>
+    </div>
   </div>
 </div>
 
 
 <div class="wrapper">
   <div class='row'>
-    <h2>See What's Popular Now</h2>
+    <h2>What's Popular Now</h2>
     <% Bathroom.all.each do |bathroom| %>
       <div class = "col-sx-12 col-sm-4">
         <%= link_to bathroom_path(bathroom) do %>

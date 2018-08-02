@@ -1,7 +1,5 @@
 <%= link_to "new bathroom", new_bathroom_path  %>
 
-
-
 <h2>My Bookings</h2>
 <% @user.bookings.each do |booking| %>
   <%= link_to booking_path(booking.id) do %>
