@@ -8,16 +8,22 @@
   <div class="navbar-wagon-right hidden-xs hidden-sm">
 
   <%= link_to bathrooms_path do %>
-    <p class="navbar-wagon-item navbar-wagon-link">Browse</p>
+    <p class="navbar-wagon-item navbar-wagon-link nav-link">Browse</p>
   <% end %>
-    <p class="navbar-wagon-item navbar-wagon-link">Team</p>
-    <p class="navbar-wagon-item navbar-wagon-link">Contact</p>
+    <p class="navbar-wagon-item navbar-wagon-link nav-link">Team</p>
+    <p class="navbar-wagon-item navbar-wagon-link nav-link">Contact</p>
 
     <% if user_signed_in? %>
     <!-- After signing up -->
       <div class="navbar-wagon-item">
         <div class="dropdown">
-          <img src="https://kitt.lewagon.com/placeholder/users/ssaunier" class="avatar dropdown-toggle" id="navbar-wagon-menu" data-toggle="dropdown">
+          <% if current_user.photo? %>
+            <div id="navbar-wagon-menu" data-toggle="dropdown">
+              <%= cl_image_tag current_user.photo , class: "avatar dropdown-toggle"%>
+            </div>
+          <% else %>
+            <img src="https://kitt.lewagon.com/placeholder/users/ssaunier" class="avatar dropdown-toggle" id="navbar-wagon-menu" data-toggle="dropdown">
+          <% end %>
           <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
             <%= link_to user_path(current_user.id) do %>
               <li>Profile</li>
