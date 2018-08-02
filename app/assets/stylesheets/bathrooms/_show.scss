@@ -3,4 +3,19 @@
 }
 .main-container {
   display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.info-container {
+  position: relative;
+}
+.info {
+  position: absolute;
+  align-items: center
+}
+#map {
+  flex: 0 0 570px;
+  height: 600px;
+  position: sticky !important;
+  top: 0 !important;
 }

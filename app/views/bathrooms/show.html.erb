@@ -1,28 +1,28 @@
-
 <% if @bathroom.photo1? %>
   <div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('<%= cl_image_path @bathroom.photo1, crop: :fill %>');">
 <% else %>
   <div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('https://st.hzcdn.com/simgs/cf3111130426c707_4-1308/traditional-bathroom.jpg');">
 <% end %>
-
   <h1><%= @bathroom.name %></h1>
   <p>$<%= @bathroom.price_per_use %></p>
 </div>
 
 <div class="main-container">
   <div class="info-container">
-    <h3>Address</h3>
-    <p><%= @bathroom.address %></p>
-    <h3>Size</h3>
-    <p><%= @bathroom.size %> square meters</p>
-    <h3>Has shower?</h3>
-    <% if @bathroom.shower_condition == true %>
-      <p>Has shower, enjoy!</p>
-    <% else %>
-      <p>Sorry, no shower.</p>
-    <% end %>
-    <h3>Description</h3>
-    <p><%= @bathroom.description %></p>
+    <div class="info">
+      <h3>Address</h3>
+      <p><%= @bathroom.address %></p>
+      <h3>Size</h3>
+      <p><%= @bathroom.size %> square meters</p>
+      <h3>Has shower?</h3>
+      <% if @bathroom.shower_condition == true %>
+        <p>Has shower, enjoy!</p>
+      <% else %>
+        <p>Sorry, no shower.</p>
+      <% end %>
+      <h3>Description</h3>
+      <p><%= @bathroom.description %></p>
+    </div>
     <div class="btn-medium">
       <%= link_to "make a booking", new_bathroom_booking_path(@bathroom) %>
     </div>
@@ -39,10 +39,6 @@
     </div>
   </div>
 
-  <div
-    id="map"
-    style="width: 100%;
-    height: 600px;"
-    data-markers="<%= @markers.to_json %>"
-  ></div>
+  <div id="map"
+    data-markers="<%= @markers.to_json %>"></div>
 </div>
