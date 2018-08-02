@@ -5,11 +5,20 @@
   <div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('https://st.hzcdn.com/simgs/cf3111130426c707_4-1308/traditional-bathroom.jpg');">
 <% end %>
 
+<div
+  id="map"
+  style="width: 100%;
+  height: 600px;"
+  data-markers="<%= @markers.to_json %>"
+></div>
+
 
   <h1><%= @bathroom.name %></h1>
   <p>$<%= @bathroom.price_per_use %></p>
 </div>
 
+  <h3>Address</h3>
+  <p><%= @bathroom.address %></p>
   <h3>Size</h3>
   <p><%= @bathroom.size %> square meters</p>
   <h3>Has shower?</h3>
