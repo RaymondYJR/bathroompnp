@@ -1,6 +1,15 @@
 class BathroomsController < ApplicationController
   def index
-    @bathrooms = Bathroom.where.not(latitude: nil, longitude: nil)
+    if params[:query].present?
+      sql_query = " \
+        bathrooms.name ILIKE :query \
+        OR bathrooms.description ILIKE :query \
+        OR users.name ILIKE :query \
+      "
+      @bathrooms = Bathroom.joins(:user).where(sql_query, query: "%#{params[:query]}%")
+    else
+      @bathrooms = Bathroom.where.not(latitude: nil, longitude: nil)
+    end
     @markers = @bathrooms.map do |bathroom|
       {
         lat: bathroom.latitude,
