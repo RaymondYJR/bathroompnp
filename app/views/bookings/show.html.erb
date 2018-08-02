@@ -5,8 +5,8 @@
     <h3><%= "Your bathroom has been booked by #{booker}" %></h3>
     <% else %>
     <% bathroom_owner_id = Bathroom.find(@booking.bathroom_id).user_id %>
-    <% owner = User.find(bathroom_owner_id).name  %>
-    <h3><%= "Your booking with #{owner} has been confirmed!" %></h3>
+    <% owner = User.find(bathroom_owner_id)  %>
+    <h3><%= "Your booking with #{owner.name} has been confirmed!" %></h3>
   <% end %>
   <ul>
     <li> Check in: <% custom_time = @booking.start_time %><%= custom_time.strftime("%H:%M, %F ")%> </li>
@@ -21,6 +21,25 @@
   <div class="banner banner-fixed" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('https://st.hzcdn.com/simgs/cf3111130426c707_4-1308/traditional-bathroom.jpg');">
 <% end %>
 </div>
+
+<div class="container-map">
+  <div class="show-map" id="map"
+    data-markers="<%= @markers.to_json %>">
+  </div>
+</div>
+
+<div class="container-owner">
+  <%= "#{owner.name}" %>
+  <% if owner.photo? %>
+      <div class="large-ava">
+        <%= cl_image_tag owner.photo %>
+      </div>
+    <% else %>
+      <img src="https://kitt.lewagon.com/placeholder/users/ssaunier" class="large-ava">
+  <% end %>
+</div>
+
+
 
 
 
