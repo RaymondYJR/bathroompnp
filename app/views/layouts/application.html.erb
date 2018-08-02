@@ -13,10 +13,12 @@
     <%#= stylesheet_pack_tag 'application', media: 'all' %> <!-- Uncomment if you import CSS in app/javascript/packs/application.js -->
   </head>
   <body>
+    <div class="page-container">
     <%= yield %>
     <%= javascript_include_tag 'application' %>
     <%= javascript_pack_tag 'application' %>
     <%= javascript_include_tag "https://maps.googleapis.com/maps/api/js?libraries=places&key=#{ENV['AIzaSyDGUfjS5-6iTex7AMAktWROhQ6LgZVdgAQ']}" %>
     <%= javascript_pack_tag "map" %>
+    </div>
   </body>
 </html>
