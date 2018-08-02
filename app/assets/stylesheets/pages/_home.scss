@@ -15,14 +15,18 @@ h1 {
   font-family: 'Milonga', cursive;
 }
 
-h2, h3 {
+#home-page-h3 {
+  margin-top: 50px;
+}
+
+#home-page-h2, #home-page-h3 {
   font-family: 'Montserrat', sans-serif;
   text-align: center;
   font-weight: 100;
   letter-spacing: 8px;
 }
 
-h2 {
+#home-page-h2 {
   margin: 40px;
 }
 
@@ -30,7 +34,7 @@ h3 {
   font-size: 20px;
 }
 
-.row {
+.home-page-row {
   padding: 20px;
   margin: auto;
 }

@@ -5,8 +5,10 @@
         <%= fa_icon 'fa-backward' %>
       <% end %>
     </div>
-    <div class="row">
-      <h2>New Booking</h2>
+    <div class="form-row">
+      <div class="form-title">
+        <h2>New Booking</h2>
+      </div>
       <div class="col col-xs-12 col-sm-12">
         <%= simple_form_for ([@bathroom, @booking]) do |book| %>
           <%= book.error_notification %>

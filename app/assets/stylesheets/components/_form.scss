@@ -1,22 +1,18 @@
 .form-inputs {
   text-align: center;
-
-}
-
-.form-actions:hover {
-  opacity: 0.8;
 }
 
 .form-card {
   background-color: rgba(54, 42, 121, 0.8);
   color: #C8BC51;
   width: 400px;
-  height: 500px;
   margin: 20px;
   border-radius: 5px;
   box-shadow: 5px;
   font-size: 15px;
   text-align: center;
+  overflow: auto;
+  padding: 20px;
 }
 
 .form-container {
@@ -26,60 +22,100 @@
   margin-top: 100px;
 }
 
-.form-control-label {
-  margin: 3px;
-  font-size: 14px;
+.form-row {
+  position: relative;
+  // padding: 0 20px 40px;
+  overflow: auto;
 }
 
-h2 {
-  margin-top: 10px;
-  margin-bottom: 10px;
-}
-
-.form-control {
-  height: 33.6px;
-  font-size: 12px;
+.form-row h2 {
+  margin-top: 0;
+  margin-bottom: 25px;
   text-align: center;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 100;
 }
 
+.links {
+  margin-top: 20px;
+  a {
+    font-size: 15px;
+    color: #CFDBD5;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 100;
+  }
+}
+
+input[type=file] {
+  margin-left: 4em;
+}
+
+.btn {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+}
+
+// .form-control-label {
+//   margin: 3px;
+//   font-size: 14px;
+// }
+
+// h2 {
+//   margin-top: 10px;
+//   margin-bottom: 10px;
+// }
+
+// .row {
+//   padding: 0px 20px;
+// }
+
+// .form-control {
+//   height: 33.6px;
+//   font-size: 12px;
+//   text-align: center;
+// }
+
+// .form-inputs {
+//   margin-bottom: 20px;
+// }
+
+// position
+.back-btn {
+  font-size: 30px;
+  text-align: left;
+  // margin-top: 20px;
+  // margin-left: 20px;
+}
+
+// calendar button
+.glyphicon-calendar {
+  font-size: 13px;
+}
 .input-group-btn {
   height: 30px !important;
 }
-
 .btn-default {
   padding: 3px 8px;
 }
 
-.glyphicon-calendar {
-  font-size: 13px;
-}
-
-.form-inputs {
-  margin-bottom: 20px;
-}
-
-#bathroom_description {
-  height: 30px;
-}
-
-.form-group {
-  margin-bottom: 10px;
-}
-
-.back-btn {
-  font-size: 30px;
-  text-align: left;
-  margin-top: 20px;
-  margin-left: 20px;
-
-}
-
+// typography & color
 a {
   color: #C8BC51;
 }
-
 a:hover{
   color: rgb(245, 245, 245)
 }
+.form-actions:hover {
+  opacity: 0.8;
+}
+
+// // pending
+// #bathroom_description {
+//   height: 30px;
+// }
+
+// .form-group {
+//   margin-bottom: 10px;
+// }
 
 
