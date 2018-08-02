@@ -37,9 +37,25 @@ h2 {
 }
 
 .form-control {
-  height: 30px;
+  height: 33.6px;
   font-size: 12px;
   text-align: center;
+}
+
+.input-group-btn {
+  height: 30px !important;
+}
+
+.btn-default {
+  padding: 3px 8px;
+}
+
+.glyphicon-calendar {
+  font-size: 13px;
+}
+
+.form-inputs {
+  margin-bottom: 20px;
 }
 
 #bathroom_description {
@@ -55,6 +71,7 @@ h2 {
   text-align: left;
   margin-top: 20px;
   margin-left: 20px;
+
 }
 
 a {

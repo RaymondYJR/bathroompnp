@@ -6,9 +6,29 @@
   opacity: 0.7;
   font-size: 20px;
   color: white;
+
 }
 .btn-medium:hover {
   opacity: 1;
   text-decoration: none;
   color: #BA1F33;
+}
+
+.btn-clear {
+  color: white;
+  border: 1px solid white;
+  border-radius: 50px;
+  font-weight: lighter;
+  font-size: 10px;
+  margin-left: 20px;
+  opacity: 0.8;
+}
+.btn-clear:hover {
+  opacity: 1;
+  text-decoration: none;
+  color: white;
+}
+
+.btn-signup {
+  background-color: #DFB954;
 }

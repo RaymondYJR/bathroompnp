@@ -1,24 +1,25 @@
 <div class="form-container">
   <div class="form-card">
     <div class="back-btn" id="back-fixed">
-       <%= link_to request.referer.present? ? request.referer : default_path do %>
-      <%= fa_icon 'fa-backward' %>
-    <% end %>
+      <%= link_to request.referer.present? ? request.referer : default_path do %>
+        <%= fa_icon 'fa-backward' %>
+      <% end %>
     </div>
     <div class="row">
       <h2>New Booking</h2>
-        <div class="col col-xs-12 col-sm-12">
-          <%= simple_form_for ([@bathroom, @booking]) do |book| %>
-            <%= book.error_notification %>
-            <%= book.error_notification message: book.object.errors[:base].to_sentence if book.object.errors[:base].present? %>
-            <div class="form-inputs">
-              <%= book.input :start_time, as: :datetime_picker %>
-              <%= book.input :end_time, as: :datetime_picker %>
-            </div>
-            <div class=“form-actions”>
-              <%= book.submit "Submit!", class: "btn btn-primary" %>
-            </div>
-          <% end %>
-        </div>
+      <div class="col col-xs-12 col-sm-12">
+        <%= simple_form_for ([@bathroom, @booking]) do |book| %>
+          <%= book.error_notification %>
+          <%= book.error_notification message: book.object.errors[:base].to_sentence if book.object.errors[:base].present? %>
+          <div class="form-inputs">
+            <%= book.input :start_time, as: :datetime_picker %>
+            <%= book.input :end_time, as: :datetime_picker %>
+          </div>
+          <div class=“form-actions”>
+            <%= book.submit "Submit!", class: "btn btn-primary" %>
+          </div>
+        <% end %>
+      </div>
     </div>
   </div>
+</div>
