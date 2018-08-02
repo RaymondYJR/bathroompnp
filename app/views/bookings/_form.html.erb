@@ -1,5 +1,10 @@
 <div class="form-container">
   <div class="form-card">
+    <div class="back-btn" id="back-fixed">
+       <%= link_to request.referer.present? ? request.referer : default_path do %>
+      <%= fa_icon 'fa-backward' %>
+    <% end %>
+    </div>
     <div class="row">
       <h2>New Booking</h2>
         <div class="col col-xs-12 col-sm-12">
