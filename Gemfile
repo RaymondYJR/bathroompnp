@@ -23,6 +23,10 @@ gem 'webpacker'
 gem 'faker'
 gem 'pg_search'
 
+gem 'datetimepicker-rails', github: 'zpaulovics/datetimepicker-rails', branch: 'master', submodules: true
+gem 'momentjs-rails', '~> 2.9',  :github => 'derekprior/momentjs-rails'
+gem "jquery-rails"
+
 group :development do
   gem 'web-console', '>= 3.3.0'
 end
