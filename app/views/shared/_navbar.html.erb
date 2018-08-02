@@ -1,17 +1,22 @@
-<div class="navbar-wagon">
+<div id="navbar-wagon">
   <!-- Logo -->
   <%= link_to root_path, class: "navbar-wagon-brand" do %>
-    <%= image_tag "logo.png", height: 50 %>
+    <%= image_tag "logo.png" %>
   <% end %>
 
   <!-- Right Navigation -->
   <div class="navbar-wagon-right hidden-xs hidden-sm">
 
-  <%= link_to bathrooms_path do %>
-    <p class="navbar-wagon-item navbar-wagon-link nav-link">Browse</p>
-  <% end %>
-    <p class="navbar-wagon-item navbar-wagon-link nav-link">Team</p>
-    <p class="navbar-wagon-item navbar-wagon-link nav-link">Contact</p>
+    <div class="custom topBotomBordersOut">
+      <%= link_to root_path do %>
+        <p class="navbar-wagon-item navbar-wagon-link">Home</p>
+      <% end %>
+      <%= link_to bathrooms_path do %>
+        <p class="navbar-wagon-item navbar-wagon-link">Browse</p>
+      <% end %>
+        <p class="navbar-wagon-item navbar-wagon-link">Team</p>
+        <p class="navbar-wagon-item navbar-wagon-link">Contact</p>
+    </div>
 
     <% if user_signed_in? %>
     <!-- After signing up -->
