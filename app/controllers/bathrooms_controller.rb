@@ -28,7 +28,6 @@ class BathroomsController < ApplicationController
 
   def new
     @bathroom = Bathroom.new
-
   end
 
   def create
