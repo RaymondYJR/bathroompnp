@@ -7,4 +7,47 @@
   opacity: 0.8;
 }
 
+.form-card {
+  background-color: rgba(54, 42, 121, 0.8);
+  color: #C8BC51;
+  width: 400px;
+  height: 500px;
+  margin: 20px;
+  border-radius: 5px;
+  box-shadow: 5px;
+  font-size: 15px;
+  text-align: center;
+}
+
+.form-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.form-control-label {
+  margin: 3px;
+  font-size: 14px;
+}
+
+h2 {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.form-control {
+  height: 30px;
+  font-size: 12px;
+  text-align: center;
+}
+
+#bathroom_description {
+  height: 30px;
+}
+
+.form-group {
+  margin-bottom: 10px;
+}
+
+
 
