@@ -3,13 +3,17 @@
   background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('images/background.jpg');
   color: white;
   text-align: center;
-  height: 70vh;
+  height: 75vh;
   display: flex;
   background-size: cover;
   justify-content: center;
   align-items: center;
   margin-bottom: 5px;
   background-position: center center;
+}
+
+.home-banner-content {
+  margin-top: 50px;
 }
 
 h1 {
@@ -29,6 +33,7 @@ h1 {
 
 #home-page-h2 {
   margin: 40px;
+  margin-top: 10px;
 }
 
 h3 {

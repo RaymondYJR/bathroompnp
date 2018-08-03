@@ -18,7 +18,13 @@
                   <%= booking.start_time.strftime("%H:%M  %b %d %Y") %>
                   <% diff = booking.end_time - booking.start_time %>
                    |
-                  <%= (diff/60/60).ceil %> mins
+                  <% if diff/60 >= 60 && diff/60 < 120 %>
+                    <%= (diff/60/60).ceil %> hr
+                  <% elsif diff/60 >= 120 %>
+                    <%= (diff/60/60).ceil %> hrs
+                  <% else %>
+                    <%= (diff/60).ceil %> mins
+                  <% end %>
                 </div>
               <% else %>
                 <div class="profile-card-time">
