@@ -5,6 +5,10 @@ class BookingsController < ApplicationController
 
   def show
     @booking = Booking.find(params[:id])
+    @markers = [{
+    lat: @booking.bathroom.latitude,
+    lng: @booking.bathroom.longitude
+    }]
   end
 
   def new
