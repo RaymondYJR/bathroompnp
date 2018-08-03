@@ -4,7 +4,7 @@
   <article class="larg">
 
     <div>
-      <h3>My Bookings <span class="entypo-down-open"></span></h3>
+      <h3>My Bookings <span class="entypo-down-open"><%= fa_icon 'fa-chevron-down' %></span></h3>
         <div class="user-content">
           <% @user.bookings.each do |booking| %>
             <%= link_to booking_path(booking.id) do %>
@@ -30,7 +30,7 @@
       </div>
     </div>
     <div>
-      <h3>My Bathrooms <span class="entypo-down-open"></span></h3>
+      <h3>My Bathrooms <span class="entypo-down-open"><%= fa_icon 'fa-chevron-down' %></span></h3>
       <div class="user-content">
         <% @user.bathrooms.each do |bathroom| %>
           <%= link_to bathroom_path(bathroom) do %>
