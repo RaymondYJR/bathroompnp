@@ -5,7 +5,7 @@
     <div class="contain-photo">
       <% if owner.photo? %>
         <div class="large-ava">
-          <%= cl_image_tag owner.photo %>
+          <%= cl_image_tag owner.photo, class: "help" %>
         </div>
       <% else %>
         <img src="https://kitt.lewagon.com/placeholder/users/ssaunier" class="large-ava">
