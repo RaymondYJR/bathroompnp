@@ -13,12 +13,18 @@
               <% else %>
                 <div class="profile-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://st.hzcdn.com/simgs/cf3111130426c707_4-1308/traditional-bathroom.jpg');">
               <% end %>
-                  <div class="profile-card-time">
-                    <%= booking.start_time.strftime("%H:%M  %b %d %Y") %>
-                    <% diff = booking.end_time - booking.start_time %>
-                     |
-                    <%= (diff/60/60).ceil %> mins
-                  </div>
+              <% if booking.start_time? %>
+                <div class="profile-card-time">
+                  <%= booking.start_time.strftime("%H:%M  %b %d %Y") %>
+                  <% diff = booking.end_time - booking.start_time %>
+                   |
+                  <%= (diff/60/60).ceil %> mins
+                </div>
+              <% else %>
+                <div class="profile-card-time">
+                  Sorry, you did not choose a start time.
+                </div>
+              <% end %>
                   <div class="profile-card-description">
                     <p><%= booking.bathroom.name %> AT</p>
                     <br>
