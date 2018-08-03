@@ -1,27 +1,31 @@
-.containban {
-  height: 150px;
-  width: 250px;
-}
-
 .banner-fixed {
-  height: 150px;
+  height: 200px;
+  width: 450px;
+  margin: 10px;
 }
 
 .show-container {
   display: grid;
-  grid-template-columns: 50% 25% 25%;
-  grid-template-rows: 40% 60%;
+  grid-template-columns: 50% 50%;
+  grid-template-rows: 1fr 1fr 1fr;
+  height: 80vh;
 }
 
 .detail-container {
-  grid-row: 1 / span 1;
+  grid-row: 2 / span 1;
   grid-column: 1 / span 1;
+  text-align: center;
+  border-top: 2px solid rgb(75,59,71);
+  border-bottom: 2px solid rgb(75,59,71);
+  margin-left: 50px;
+  margin-right: 50px;
 }
 
 .check-container {
 display: flex;
 justify-content: space-around;
 align-items: center;
+margin-bottom: 20px;
 }
 
 .check {
@@ -29,5 +33,73 @@ align-items: center;
 }
 .confirm-message {
   padding: 30px;
+  text-align: center;
+  grid-row: 1 / span 1;
+  grid-column: 1 / span 1;
+}
+
+.containban {
+  grid-row: 3 / span 1;
+  grid-column: 1 / span 1;
+  display: flex;
+  justify-content: center;
+}
+
+.container-map {
+  grid-row: 1 / span 3;
+  grid-column: 2 / span 1;
+}
+
+.book-map {
+  height: 90vh;
+}
+
+
+.large-ava {
+  border-radius: 50%;
+  height: 100px;
+  width: 100px;
+}
+
+.confirm-card {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 10px;
+}
+
+.contain-photo {
+  margin-left: 40px;
+}
+
+.contain-butt {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.large-butt {
+  font-size: 50px;
+  padding-top: 50px;
+}
+
+.bath-name {
+  padding-bottom: 10px;
+}
+
+.fa-times-circle:hover{
+  color: rgb(201, 34, 50)
+}
+
+.fa-backward:hover{
+  color: rgb(75,59,71)
+}
+
+.fa-edit:hover{
+  color: rgb(75,59,71)
+}
+
+.penis {
+  color: #C8BC51;
 }
 

@@ -1,7 +1,7 @@
 <div class= "banner", style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= asset_path 'background.jpg' %>);">
   <div class="banner-content">
     <h1>Find Your Dream Bathroom</h1>
-    <h3 id="home-page-h3">ANYTIME, ANYWHERE</h3>
+    <h3 id="home-page-h3">ANYWHERE, ANYTIME</h3>
     <div class="container">
       <div class="custom topBotomBordersOut">
         <%= link_to new_bathroom_path do %>
@@ -17,7 +17,7 @@
 
 <div class="wrapper">
   <div class='home-page-row'>
-    <h2 id="home-page-h2">What's Popular Now</h2>
+    <h2 id="home-page-h2">Nearby you now</h2>
     <% Bathroom.all.each do |bathroom| %>
       <div class = "col-sx-12 col-sm-4">
         <%= link_to bathroom_path(bathroom) do %>
