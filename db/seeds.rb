@@ -31,7 +31,9 @@ User.all.each do |user|
     price_per_use: (10..500).to_a.sample,
     name: Faker::Superhero.name,
     size: (30..100).to_a.sample.to_s,
-    description: Faker::Lorem.paragraph
+    description: Faker::Lorem.paragraph,
+    latitude: Faker::Address.latitude,
+    longitude: Faker::Address.longitude
   )
 end
 
