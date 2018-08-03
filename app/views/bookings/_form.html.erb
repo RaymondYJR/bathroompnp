@@ -5,7 +5,7 @@
         <%= fa_icon 'fa-backward' %>
       <% end %>
     </div>
-    <div class="form-row">
+    <div class="form-row booking-form-row">
       <div class="form-title">
         <h2>New Booking</h2>
       </div>
@@ -17,8 +17,8 @@
             <%= book.input :start_time, as: :datetime_picker %>
             <%= book.input :end_time, as: :datetime_picker %>
           </div>
-          <div class=“form-actions”>
-            <%= book.submit "Submit!", class: "btn btn-primary" %>
+          <div class="form-actions booking-form-button">
+            <%= book.submit "Submit!" %>
           </div>
         <% end %>
       </div>

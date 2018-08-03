@@ -1,5 +1,23 @@
+.booking-form-row {
+  height: 480px;
+}
+
 .form-inputs {
   text-align: center;
+}
+
+.input-group>.dropdown-menu {
+  width: 339px;
+  padding-left: 10px;
+}
+
+.dropdown-menu .table-condensed {
+  width: 339px;
+  font-size: 10px;
+}
+
+.booking-form-button {
+  margin-top: 20px;
 }
 
 .form-card {
@@ -69,11 +87,11 @@ input[type=file] {
 //   padding: 0px 20px;
 // }
 
-// .form-control {
-//   height: 33.6px;
-//   font-size: 12px;
-//   text-align: center;
-// }
+.form-control {
+  height: 33.6px;
+  font-size: 12px;
+  text-align: center;
+}
 
 // .form-inputs {
 //   margin-bottom: 20px;
