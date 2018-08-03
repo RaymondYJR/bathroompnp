@@ -3,12 +3,14 @@
     <h1>Find Your Dream Bathroom</h1>
     <h3 id="home-page-h3">ANYTIME, ANYWHERE</h3>
     <div class="container">
-      <%= link_to new_bathroom_path do %>
-        <span>Host Your Bathroom</span>
-      <% end %>
-      <%= link_to bathrooms_path do %>
-        <span>Book a Bathroom</span>
-      <% end %>
+      <div class="custom topBotomBordersOut">
+        <%= link_to new_bathroom_path do %>
+          <p>Host Your Bathroom</p>
+        <% end %>
+        <%= link_to bathrooms_path do %>
+          <p>Book a Bathroom</p>
+        <% end %>
+      </div>
     </div>
   </div>
 </div>
