@@ -1,47 +1,56 @@
 <div class="container">
+<span class="bckg"></span>
+<main>
+  <article class="larg">
 
-  <%= link_to "new bathroom", new_bathroom_path  %>
-
-  <div class="my-bookings">
-    <h2>My Bookings</h2>
-    <% @user.bookings.each do |booking| %>
-      <%= link_to booking_path(booking.id) do %>
-        <div class="col-xs-12 col-sm-4">
-          <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2));">
-            <div class="card-category">My booking</div>
-            <div class="card-description">
-              <p><%= booking.start_time %></p>
-              <p><%= booking.end_time %></p>
-              <p><%= booking.bathroom.name %></p>
-              <p><%= booking.bathroom.address %></p>
-            </div>
-          </div>
-        </div>
-      <% end %>
-    <% end %>
-  </div>
-
-  <br>
-
-  <div class="my-bathrooms">
-    <h2>My Bathrooms</h2>
-    <% @user.bathrooms.each do |bathroom| %>
-      <%= link_to bathroom_path(bathroom) do %>
-        <div class="col-xs-12 col-sm-4">
-          <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2));">
-            <div class="card-category">My bathroom</div>
-            <div class="card-description">
-              <p><%= bathroom.name %></p>
-              <p><%= bathroom.address %></p>
-              <p><%= bathroom.size %> squre meters</p>
-              <p><%= bathroom.shower_condition %></p>
-              <p>$<%= bathroom.price_per_use %></p>
-              <p><%= bathroom.description %></p>
-            </div>
-          </div>
-        </div>
-      <% end %>
-    <% end %>
-  </div>
-
+    <div>
+      <h3>My Bookings <span class="entypo-down-open"></span></h3>
+        <div class="user-content">
+          <% @user.bookings.each do |booking| %>
+            <%= link_to booking_path(booking.id) do %>
+              <% if booking.bathroom.photo1? %>
+                <div class="profile-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path booking.bathroom.photo1, crop: :fill %>');">
+              <% else %>
+                <div class="profile-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://st.hzcdn.com/simgs/cf3111130426c707_4-1308/traditional-bathroom.jpg');">
+              <% end %>
+                  <div class="profile-card-time">
+                    <%= booking.start_time.strftime("%H:%M  %b %d %Y") %>
+                    <% diff = booking.end_time - booking.start_time %>
+                     |
+                    <%= (diff/60/60).ceil %> mins
+                  </div>
+                  <div class="profile-card-description">
+                    <p><%= booking.bathroom.name %> AT</p>
+                    <br>
+                    <p><%= booking.bathroom.address %></p>
+                  </div>
+                </div>
+            <% end %>
+          <% end %>
+      </div>
+    </div>
+    <div>
+      <h3>My Bathrooms <span class="entypo-down-open"></span></h3>
+      <div class="user-content">
+        <% @user.bathrooms.each do |bathroom| %>
+          <%= link_to bathroom_path(bathroom) do %>
+              <% if bathroom.photo1? %>
+                <div class="profile-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path bathroom.photo1, crop: :fill %>');">
+              <% else %>
+                <div class="profile-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://st.hzcdn.com/simgs/cf3111130426c707_4-1308/traditional-bathroom.jpg');">
+              <% end %>
+                <div class="profile-card-room-name">
+                  <p><%= bathroom.name %></p>
+                </div>
+                <div class="profile-card-address">
+                  <p><%= bathroom.address %></p>
+                  <p>$<%= bathroom.price_per_use %></p>
+                </div>
+              </div>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+  </article>
+</main>
 </div>
