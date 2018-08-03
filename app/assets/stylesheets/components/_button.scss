@@ -1,3 +1,12 @@
+div.btn-black-out p{
+  color: black;
+}
+
+div.btn-black-out p:before, div.btn-black-out p:after {
+  background: black;
+}
+
+
 .btn-medium {
   background-color: #000000;
   border: 1px solid #000000;
@@ -8,6 +17,7 @@
   color: white;
 
 }
+
 .btn-medium:hover {
   opacity: 1;
   text-decoration: none;
