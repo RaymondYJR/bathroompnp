@@ -46,7 +46,7 @@
       <% end %>
     </div>
     <div class="large-butt" id="cancel-butt">
-      <%= link_to booking_path, method: :delete do %>
+      <%= link_to booking_path, method: :delete,  data: { confirm: "Are you sure?" } do %>
         <%= fa_icon 'fa-times-circle' %>
       <% end %>
     </div>
