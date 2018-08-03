@@ -3,9 +3,12 @@
     <h1>Find Your Dream Bathroom</h1>
     <h3 id="home-page-h3">ANYTIME, ANYWHERE</h3>
     <div class="container">
-      <a href="/" class="btn-medium">Host Your Bathroom</a>
-      <!--%= link_to "Book a Bathroom", bathroom_booking %-->
-      <a href="/" class="btn-medium">Book a Bathroom</a>
+      <%= link_to new_bathroom_path do %>
+        <span>Host Your Bathroom</span>
+      <% end %>
+      <%= link_to bathrooms_path do %>
+        <span>Book a Bathroom</span>
+      <% end %>
     </div>
   </div>
 </div>

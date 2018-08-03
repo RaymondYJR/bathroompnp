@@ -8,16 +8,16 @@
   <% end %>
 </div>
 
-
 <div class="main-container">
   <div class="cards-container">
+    <div class="bathroom-index-row">
     <% @bathrooms.each do |bathroom| %>
       <%= link_to bathroom_path(bathroom) do %>
         <div class="col-xs-12 col-sm-6">
           <% if bathroom.photo1? %>
-            <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path bathroom.photo1, crop: :fill %>');">
+            <div class="card bathroom-index-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path bathroom.photo1, crop: :fill %>');">
           <% else %>
-            <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://st.hzcdn.com/simgs/cf3111130426c707_4-1308/traditional-bathroom.jpg');">
+            <div class="card bathroom-index-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://st.hzcdn.com/simgs/cf3111130426c707_4-1308/traditional-bathroom.jpg');">
           <% end %>
 
             <div class="card-category"><%= bathroom.name %></div>
@@ -37,6 +37,7 @@
         </div>
       <% end %>
     <% end %>
+    </div>
   </div>
 
   <div class="home-map"

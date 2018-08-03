@@ -1,3 +1,8 @@
+.cards-container {
+  // padding: 10px;
+  display: flex;
+}
+
 .card {
   height: 175px;
   text-shadow: 0 1px 3px rgba(0,0,0,0.6);
@@ -6,7 +11,24 @@
   color: white;
   position: relative;
   margin-bottom: 20px;
+  padding-right: 15px;
 }
+
+.col-xs-12, .col-sm-6 {
+  padding-left: 0px;
+  padding-right: 0px;
+}
+
+.bathroom-index-card {
+  width: 291px !important;
+  position: relative;
+}
+
+.bathroom-index-row {
+  padding-left: 20px;
+  padding-right: 0px;
+}
+
 .card-user {
   position: absolute;
   right: 10px;
@@ -41,12 +63,11 @@
   display: flex;
 }
 .home-map {
-  flex: 0 0 570px;
+  flex: 0 0 500px;
   height: 100vh;
   position: sticky !important;
   top: 0 !important;
 }
-
 .search-bar {
   width: 50em;
   margin: 0 auto;
